@@ -20,6 +20,7 @@ FROM anibali/pytorch:cuda-10.0
 # #RUN echo `pwd`
 
 # Anaconda installing
+RUN apt-get update && apt-get install wget -y
 RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 RUN bash Anaconda3-5.0.1-Linux-x86_64.sh -b
 RUN rm Anaconda3-5.0.1-Linux-x86_64.sh
