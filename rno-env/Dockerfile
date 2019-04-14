@@ -23,6 +23,8 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 ### modification
 RUN sed -i 's/Port 22/Port 4444/' /etc/ssh/sshd_config
+RUN mkdir /home/$USER_NAME/.ssh
+COPY authorized_keys /home/$USER_NAME/.ssh/authorized_keys
 
 EXPOSE 4444
 CMD ["/usr/sbin/sshd", "-D"]
